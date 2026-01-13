@@ -1,7 +1,6 @@
 <div align="center">
 
 # 🍕 **QuickBite** 
-### ~Decizii Rapide, Gusturi Memorabile~
 
 </div>
 
