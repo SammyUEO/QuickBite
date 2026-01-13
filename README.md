@@ -1,8 +1,13 @@
-🍕 QuickBite — Decizii Rapide, Gusturi Memorabile
+<div align="center">
 
-QuickBite transformă dilema zilnică „Eu ce mănânc azi?” într-o experiență distractivă și interactivă. Dezvoltată în Flutter, aplicația combină un design vibrant cu o funcționalitate intuitivă pentru a-ți oferi sugestia culinară perfectă în câteva secunde.
+# 🍕 **QuickBite** 
+### ~Decizii Rapide, Gusturi Memorabile~
 
-✨ Experiența Utilizatorului
+</div>
+
+**QuickBite** transformă dilema zilnică „Eu ce mănânc azi?” într-o experiență distractivă și interactivă. Dezvoltată în Flutter, aplicația combină un design vibrant cu o funcționalitate intuitivă pentru a-ți oferi sugestia culinară perfectă în câteva secunde.
+
+✨ **Experiența Utilizatorului** 
 
 Aplicația este construită în jurul a trei piloni fundamentali: Simplitate, Estetică și Eficiență.
 
@@ -14,63 +19,91 @@ Aplicația este construită în jurul a trei piloni fundamentali: Simplitate, Es
 
 Codul este organizat modular pentru a respecta bunele practici de dezvoltare și pentru a asigura o mentenabilitate ridicată:
 
+```
 lib/
-├── 📱 main.dart            # Punctul de lansare & Tema aplicației
-├── 📦 models/              # Structuri de date (FoodItem)
-├── 💾 data/                # Sursa de date hardcodate
-├── 🧩 widgets/             # Componente UI reutilizabile (Card-uri, Badges, Butoane)
-└── 🖼️ screens/             # Ecranele principale (Home, List, Details)
+├── 📱 main.dart           # Punctul de lansare & Tema aplicației
+├── 📦 models/             # Structuri de date (FoodItem)
+├── 💾 data/               # Sursa de date hardcodate
+├── 🧩 widgets/            # Componente UI reutilizabile (Card-uri, Badges, Butoane)
+└── 🖼️ screens/            # Ecranele principale (Home, List, Details)
+```
 
+---
 
-🛠️ Detalii Tehnice de Implementare
+## 🛠️ Detalii Tehnice de Implementare
 
-Caracteristică	Tehnologie / Widget Utilizat
+| **Caracteristică** | **Tehnologie / Widget Utilizat** |
+|-------------------|----------------------------------|
+| **State Management** | StatefulWidget cu setState pentru animații și selecție |
+| **Navigare** | Navigator.push cu tranziții native |
+| **Layout** | CustomScrollView & Slivers pentru efecte de scroll premium |
+| **Responsiveness** | ConstrainedBox (max 800px) pentru experiență optimă pe Web/Desktop |
+| **Animații** | AnimationController & ScaleTransition pe butonul principal |
+| **UI Kit** | Material Design 3, ClipRRect pentru imagini, GoogleFonts |
 
-State Management	StatefulWidget cu setState pentru animații și selecție
-Navigare	        Navigator.push cu tranziții native
-Layout	            CustomScrollView & Slivers pentru efecte de scroll premium
-Responsiveness	    ConstrainedBox (max 800px) pentru experiență optimă pe Web/Desktop
-Animații	        AnimationController & ScaleTransition pe butonul principal
-UI Kit	            Material Design 3, ClipRRect pentru imagini, GoogleFonts
+---
 
-🍽️ Meniul QuickBite
+## 🍽️ Meniul QuickBite
 
-Aplicația vine pre-configurată cu 10 delicii globale:
+Aplicația vine pre-configurată cu **10 delicii globale**:
 
-1. Pizza Margherita 🇮🇹 
-2. Burger Clasic 🇺🇸 
-3. Sushi Roll 🇯🇵 
-4. Tacos Mexicani 🇲🇽 
-5. Paste Carbonara 🇮🇹 
-6. Salată Caesar 🥗 
-7. Ramen Japonez 🍜 
-8. Shawarma 🥙 
-9. Pancakes 🥞 
-10. Pad Thai 🇹🇭
+| # | Preparat | Țară | # | Preparat | Țară |
+|---|----------|------|---|----------|------|
+| 1. | Pizza Margherita | 🇮🇹 | 6. | Salată Caesar | 🥗 |
+| 2. | Burger Clasic | 🇺🇸 | 7. | Ramen Japonez | 🍜 |
+| 3. | Sushi Roll | 🇯🇵 | 8. | Shawarma | 🥙 |
+| 4. | Tacos Mexicani | 🇲🇽 | 9. | Pancakes | 🥞 |
+| 5. | Paste Carbonara | 🇮🇹 | 10. | Pad Thai | 🇹🇭 |
 
-🚀 Instalare și Rulare
+---
+
+## 🚀 Instalare și Rulare
 
 Pentru a porni aplicația în mediul de dezvoltare, urmează pașii:
 
 1. Clonează repository-ul
-2. Verifică integritatea mediului:
+### 📋 Pași de Instalare
 
+**1.** Clonează repository-ul
+
+**2.** Verifică integritatea mediului:
+```bash
 flutter doctor
+```
 
-3. Instalează dependențele:
-
+**3.** Instalează dependențele:
+```bash
 flutter pub get
+```
 
-4. Lansează în simulator/browser:
-
+**4.** Lansează în simulator/browser:
+```bash
 flutter run
+```
 
-📱 Platforme Suportate
+---
 
-Mobile: iOS & Android (Interfață adaptivă)
-Web: Optimizat pentru Chrome/Safari/Edge
-Desktop: Windows & macOS (Layout centrat pentru lizibilitate)
+## 📱 Platforme Suportate
 
+<table>
+  <tr>
+    <td align="center">📱</td>
+    <td><b>Mobile</b></td>
+    <td>iOS & Android (Interfață adaptivă)</td>
+  </tr>
+  <tr>
+    <td align="center">🌐</td>
+    <td><b>Web</b></td>
+    <td>Optimizat pentru Chrome/Safari/Edge</td>
+  </tr>
+  <tr>
+    <td align="center">💻</td>
+    <td><b>Desktop</b></td>
+    <td>Windows & macOS (Layout centrat pentru lizibilitate)</td>
+  </tr>
+</table>
+
+---
 ## 📸 Capturi de Ecran
 
 Sistemul vizual folosește un fundal cald Orange[50] și carduri elevate pentru un contrast modern.
@@ -86,9 +119,5 @@ Sistemul vizual folosește un fundal cald Orange[50] și carduri elevate pentru 
     <td><img src="lib/screenshots/recipes.png" width="250"/></td>
     <td><img src="lib/screenshots/info recipe.png" width="250"/></td>
   </tr>
-  <tr>
-    <td align="center"><i>Interfață Minimalistă</i></td>
-    <td align="center"><i>Scroll Infinit</i></td>
-    <td align="center"><i>Informații Complete</i></td>
-  </tr>
+
 </table>
