@@ -1,0 +1,18 @@
+<!-- Placeholder pentru logo QuickBite -->
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="200" fill="#FFFFFF"/>
+  
+  <!-- Iconița verde cu furculița -->
+  <circle cx="120" cy="100" r="60" fill="#9CCC65"/>
+  <path d="M 100 70 L 100 110" stroke="white" stroke-width="8" fill="none"/>
+  <path d="M 115 70 L 115 110" stroke="white" stroke-width="8" fill="none"/>
+  <path d="M 130 70 L 130 110" stroke="white" stroke-width="8" fill="none"/>
+  <path d="M 105 110 Q 115 130, 125 110" stroke="white" stroke-width="8" fill="none"/>
+  
+  <!-- Text QuickBite -->
+  <text x="200" y="95" font-size="52" font-weight="bold" fill="#9CCC65">Quick</text>
+  <text x="360" y="95" font-size="52" font-weight="bold" fill="#4A4A4A">Bite</text>
+  
+  <!-- Slogan -->
+  <text x="200" y="130" font-size="24" fill="#FF9800">Decide less. Eat better.</text>
+</svg>
