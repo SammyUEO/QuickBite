@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'screens/home_screen.dart';
 import 'common/app_strings.dart';
 import 'common/app_theme.dart';
@@ -6,6 +7,9 @@ import 'utils/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Configurăm URL strategy pentru web
+  usePathUrlStrategy();
 
   // Inițializăm serviciul de notificări
   await NotificationService().initialize();
