@@ -306,7 +306,7 @@ class DessertFoods {
       ],
     ),
     FoodItem(
-      name: 'Ecleruri 🥐',
+      name: 'Eclere 🥐',
       description:
           'Eclere franțuzești umplute cu cremă de vanilie și acoperite cu glazură de ciocolată!',
       imageUrl: 'assets/images/ecler.jpg',
