@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/food_item.dart';
+import '../common/app_theme.dart';
 import '../widgets/food_info_badges.dart';
 import '../widgets/food_prep_time.dart';
 import '../widgets/food_description.dart';
@@ -15,13 +16,13 @@ class FoodDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange[50],
+      backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
         title: Text(
           food.name,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
-        backgroundColor: Colors.orange,
+        backgroundColor: AppTheme.primaryColor,
         elevation: 0,
       ),
       body: Center(
@@ -37,7 +38,7 @@ class FoodDetailsScreen extends StatelessWidget {
                     tag: 'food_${food.name}',
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: Image.network(
+                      child: Image.asset(
                         food.imageUrl,
                         height: 400,
                         width: double.infinity,
@@ -86,8 +87,8 @@ class FoodDetailsScreen extends StatelessWidget {
                       const SizedBox(height: 32),
 
                       // Buton de acțiune
-                      FoodActionButton(foodName: food.name),
-                      const SizedBox(height: 20),
+                      FoodActionButton(food: food),
+                      const SizedBox(height: 40),
                     ],
                   ),
                 ),

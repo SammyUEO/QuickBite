@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import '../common/app_strings.dart';
+import '../common/app_theme.dart';
+import '../models/food_item.dart';
+import '../screens/cooking_steps_screen.dart';
+import '../utils/navigation_helper.dart';
 
 /// Widget pentru butonul de acțiune
 class FoodActionButton extends StatelessWidget {
-  final String foodName;
+  final FoodItem food;
 
-  const FoodActionButton({super.key, required this.foodName});
+  const FoodActionButton({super.key, required this.food});
 
   @override
   Widget build(BuildContext context) {
@@ -13,26 +18,36 @@ class FoodActionButton extends StatelessWidget {
       height: 56,
       child: ElevatedButton.icon(
         onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Poftă bună cu $foodName! 🍽️'),
-              backgroundColor: Colors.green,
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
+          if (food.steps.isNotEmpty) {
+            // Navighează către ecranul cu pași
+            NavigationHelper.navigateTo(
+              context,
+              CookingStepsScreen(food: food),
+            );
+          } else {
+            // Mesaj dacă nu sunt pași disponibili
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'Pașii de preparare nu sunt disponibili momentan.',
+                ),
+                backgroundColor: Colors.orange,
+              ),
+            );
+          }
         },
         icon: const Icon(Icons.restaurant_menu, size: 24),
         label: const Text(
-          'Gătește această rețetă!',
+          AppStrings.buttonStartCooking,
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.orange,
+          backgroundColor: AppTheme.primaryColor,
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(AppTheme.buttonBorderRadius),
           ),
-          elevation: 3,
+          elevation: AppTheme.cardElevation,
         ),
       ),
     );

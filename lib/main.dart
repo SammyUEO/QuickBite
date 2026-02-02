@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
+import 'common/app_strings.dart';
+import 'common/app_theme.dart';
+import 'utils/notification_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Inițializăm serviciul de notificări
+  await NotificationService().initialize();
+
   runApp(const QuickBiteApp());
 }
 
@@ -12,16 +20,9 @@ class QuickBiteApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QuickBite',
+      title: AppStrings.appTitle,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.orange,
-          brightness: Brightness.light,
-        ),
-        useMaterial3: true,
-        fontFamily: 'Roboto',
-      ),
+      theme: AppTheme.lightTheme,
       home: const HomeScreen(),
     );
   }

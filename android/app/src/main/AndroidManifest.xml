@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permisiuni pentru notificări -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    
     <application
-        android:label="quickbite"
+        android:label="QuickBite"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

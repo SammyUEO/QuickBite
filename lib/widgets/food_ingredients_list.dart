@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../common/app_strings.dart';
 
 /// Widget pentru afișarea listei de ingrediente
 class FoodIngredientsList extends StatelessWidget {
@@ -12,7 +13,7 @@ class FoodIngredientsList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'Ingrediente',
+          AppStrings.sectionIngredients,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 12),

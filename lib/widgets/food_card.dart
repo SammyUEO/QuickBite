@@ -24,7 +24,7 @@ class FoodCard extends StatelessWidget {
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(15),
               ),
-              child: Image.network(
+              child: Image.asset(
                 food.imageUrl,
                 height: 280,
                 width: double.infinity,

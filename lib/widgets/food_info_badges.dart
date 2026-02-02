@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/food_item.dart';
+import '../common/app_strings.dart';
 
-/// Widget pentru afișarea badge-urilor cu categoria și dificultatea
+/// Widget pentru badge-urile cu informații (categorie, dificultate, tip masă, vegetarian)
 class FoodInfoBadges extends StatelessWidget {
   final FoodItem food;
 
@@ -9,71 +10,71 @@ class FoodInfoBadges extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
+      spacing: 12,
+      runSpacing: 12,
       children: [
-        // Categoria
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          decoration: BoxDecoration(
-            color: Colors.orange[100],
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Row(
-            children: [
-              const Icon(Icons.category, size: 18, color: Colors.orange),
-              const SizedBox(width: 6),
-              Text(
-                food.category,
-                style: const TextStyle(
-                  color: Colors.orange,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
+        _InfoBadge(
+          icon: Icons.public,
+          label: food.category,
+          color: Colors.blue,
         ),
-        const SizedBox(width: 12),
-
-        // Dificultatea
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          decoration: BoxDecoration(
-            color: _getDifficultyColor(food.difficulty).withOpacity(0.2),
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Row(
-            children: [
-              Icon(
-                Icons.bar_chart,
-                size: 18,
-                color: _getDifficultyColor(food.difficulty),
-              ),
-              const SizedBox(width: 6),
-              Text(
-                food.difficulty,
-                style: TextStyle(
-                  color: _getDifficultyColor(food.difficulty),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
+        _InfoBadge(
+          icon: Icons.restaurant,
+          label: food.mealType.displayName,
+          color: Colors.purple,
         ),
+        _InfoBadge(
+          icon: Icons.signal_cellular_alt,
+          label: food.difficulty,
+          color: Colors.orange,
+        ),
+        if (food.isVegetarian)
+          const _InfoBadge(
+            icon: Icons.eco,
+            label: AppStrings.labelVegetarian,
+            color: Colors.green,
+          ),
       ],
     );
   }
+}
 
-  Color _getDifficultyColor(String difficulty) {
-    switch (difficulty.toLowerCase()) {
-      case 'ușor':
-      case 'usor':
-        return Colors.green;
-      case 'mediu':
-        return Colors.orange;
-      case 'dificil':
-        return Colors.red;
-      default:
-        return Colors.grey;
-    }
+class _InfoBadge extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final Color color;
+
+  const _InfoBadge({
+    required this.icon,
+    required this.label,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color, width: 1.5),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 18, color: color),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: TextStyle(
+              color: color,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

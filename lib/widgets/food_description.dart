@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../common/app_strings.dart';
 
 /// Widget pentru afișarea descrierii preparatului
 class FoodDescription extends StatelessWidget {
@@ -12,7 +13,7 @@ class FoodDescription extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'Descriere',
+          AppStrings.sectionDescription,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 12),
